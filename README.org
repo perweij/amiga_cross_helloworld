@@ -28,8 +28,9 @@ programs from GNU/Linux (possibly from other environments too). The
 cross compilation environment is a minor fork of
 [[https://github.com/cahirwpz/amigaos-cross-toolchain][https://github.com/cahirwpz/amigaos-cross-toolchain]], and the emulation
 is done in [[https://fs-uae.net/][fs-uae]]. Using Docker's mapped folders, the source files can
-be conveniently edited in the host environment. Compilation and execution
-is also fully controlled from the host environment.
+be conveniently edited in the host environment. Compilation and
+execution is also fully controlled from the host environment. The
+emulator works with both graphics and sound.
 
 The project pulls the image ~perweij/amigaos-cross-toolchain~ from
 Docker. That image is automatically built when [[https://github.com/perweij/amigaos-cross-toolchain/blob/master/Dockerfile][this Dockerfile]] is
