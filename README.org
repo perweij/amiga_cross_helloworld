@@ -53,7 +53,7 @@ and ~--privileged~ - which could probably be used to compromise your machine fro
 Docker image, so use with care, I can not be held responsible for any damage.
 
 * Prereqs
-Docker must be installed on the host, and [[https://www.gnu.org/software/make/][GNU Make]] (unless you want to
+[[https://docs.docker.com/][Docker CE]] must be installed on the host, and [[https://www.gnu.org/software/make/][GNU Make]] (unless you want to
 run the commands manually).
 
 * Install
