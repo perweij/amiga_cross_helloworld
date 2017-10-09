@@ -11,21 +11,7 @@ int main(int argc, char *argv[]) {
   DOSBase = OpenLibrary("dos.library", 0);
 
   if(DOSBase) {
-    Write(Output(), "     +++###      \n", 18);
-    Write(Output(), "   #+##+#++      \n", 18);
-    Write(Output(), "  ###+###++      \n", 18);
-    Write(Output(), " #++###.`.#      \n", 18);
-    Write(Output(), ".#+##      ;;;;;;\n", 18);
-    Write(Output(), "+###`      +###+ \n", 18);
-    Write(Output(), "+###       ####  \n", 18);
-    Write(Output(), "####       :::`  \n", 18);
-    Write(Output(), "####       ''''. \n", 18);
-    Write(Output(), ";####      ''''',\n", 18);
-    Write(Output(), " ####+`   `      \n", 18);
-    Write(Output(), " `######+#+      \n", 18);
-    Write(Output(), "  `#+#+##++      \n", 18);
-    Write(Output(), "    '+##+##      \n", 18);
-    Write(Output(), "       ``        \n", 18);
+    Write(Output(), "HELLO WORLD!     \n", 18);
     CloseLibrary(DOSBase);
   }
 
