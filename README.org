@@ -1,0 +1,67 @@
+#+TITLE:     amiga cross helloworld
+#+AUTHOR:    Per Weijnitz
+#+EMAIL:     per.weijnitz@gmail.com
+#+DATE:      2017-10-09
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:nil pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude
+#+STARTUP:   showall
+#+MENU:      Buffers
+
+
+
+* Changes
+ - 2017-05-16: Version 0.1 - initial version
+
+
+ | Status:   | Works                                             |
+ | Location: | [[https://github.com/perweij/amiga_cross_helloworld]] |
+
+
+
+* Description
+This is a working Docker setup for compiling and running Amiga
+programs from GNU/Linux (possibly from other environments too). The
+cross compilation environment is a minor fork of
+[[https://github.com/cahirwpz/amigaos-cross-toolchain][https://github.com/cahirwpz/amigaos-cross-toolchain]], and the emulation
+is done in [[https://fs-uae.net/][fs-uae]]. Using Docker's mapped folders, the source files can
+be conveniently edited in the host environment.
+
+The project pulls the image ~perweij/amigaos-cross-toolchain~ from
+Docker. That image is automatically built when [[https://github.com/perweij/amigaos-cross-toolchain/blob/master/Dockerfile][this Dockerfile]] is
+updated.
+
+** Compiling
+By running ~make all~ in the host environment, the compiler within the
+Docker image is executed, producing an [[https://en.wikipedia.org/wiki/Amiga_Disk_File][ADF-image]] containing the
+program, ready to be booted in the emulator.
+
+** Running
+By running ~make run~ in the host environment, the emulator is called
+within the Docker image, booting the ADF-image produced in the
+compiling step, causing the program to be executed.
+
+The emulator is run with the configuration file ~a1200.fs-uae~. By default
+it uses the free [[http://aros.sourceforge.net/][AROS rom]] instead of an original rom dump.
+
+* Prereqs
+Docker must be installed on the host, and [[https://www.gnu.org/software/make/][GNU Make]] (unless you want to
+run the commands manually).
+
+* Install
+Clone https://github.com/perweij/amiga_cross_helloworld.git .
+
+* Usage
+
+: make clean all run
+
+* Todo
+ - include parts in assembler. This would be trivial, as the cross compilation
+   environment contains an assembler among other things.
+
+* Related work
+ - https://amiga.sebastian-bergmann.de/2017/02/18/dockerized-cross-compiler/
+ - https://github.com/cahirwpz/amigaos-cross-toolchain

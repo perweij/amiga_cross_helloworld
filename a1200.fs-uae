@@ -1,0 +1,7 @@
+# FS-UAE configuration saved by FS-UAE Launcher
+# Last saved: 2017-09-30 14:21:20
+
+[fs-uae]
+amiga_model = A1200/3.0
+#Optionally run a Commodore kickstart. 
+#kickstart_file = /tmp/proj/rom/kick31.rom

@@ -1,0 +1,28 @@
+## This makefile is executed within a Docker container
+
+CFILES  = hello.c
+
+# fixme: use implicit rules instead
+OBJFILES = $(shell echo $(CFILES) | sed -E -e 's/.c/.o/g')
+
+# this name is needed for workaround in amitools
+AMITOOLS = $(shell find / -type d -name amitools-0.1.0-py2.7-linux-x86_64.egg)
+
+all: $(NAME).adf
+
+$(NAME).adf: $(NAME)
+	echo C:$(NAME) > startup-sequence
+	env PYTHONPATH=$(AMITOOLS) python2.7 $(AMITOOLS)/amitools/tools/xdftool.py $(NAME).adf \
+	format $(NAME) ffs + \
+	boot install + \
+	makedir C + \
+	write $(NAME) C/$(NAME) + \
+	makedir S + \
+	write startup-sequence S/startup-sequence
+
+$(NAME): $(CFILES)
+	m68k-amigaos-gcc -noixemul -c $(CFILES)
+	m68k-amigaos-gcc -noixemul -o $(NAME) $(OBJFILES)
+
+docker-clean:
+	rm -f $(NAME) startup-sequence $(NAME).adf $(OBJFILES)
