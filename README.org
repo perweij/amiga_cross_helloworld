@@ -36,6 +36,13 @@ The project pulls the image ~perweij/amigaos-cross-toolchain~ from
 Docker. That image is automatically built when [[https://github.com/perweij/amigaos-cross-toolchain/blob/master/Dockerfile][this Dockerfile]] is
 updated.
 
+#+BEGIN_SRC sh :exports results :results value html
+#!/bin/bash
+echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/V2GIeWWkFSE" frameborder="0" allowfullscreen></iframe>'
+#+END_SRC
+
+Check [[https://youtu.be/V2GIeWWkFSE][here]] for a video demo.
+
 ** Compiling
 By running ~make all~ in the host environment, the compiler within the
 Docker image is executed, producing an [[https://en.wikipedia.org/wiki/Amiga_Disk_File][ADF-image]] containing the
