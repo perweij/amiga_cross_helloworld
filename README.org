@@ -47,6 +47,10 @@ compiling step, causing the program to be executed.
 The emulator is run with the configuration file ~a1200.fs-uae~. By default
 it uses the free [[http://aros.sourceforge.net/][AROS rom]] instead of an original rom dump.
 
+Please note that the emulator is called with Docker flags ~--device=/dev/video0~
+and ~--privileged~ - which could probably be used to compromise your machine from withing the
+Docker image, so use with care, I can not be held responsible for any damage.
+
 * Prereqs
 Docker must be installed on the host, and [[https://www.gnu.org/software/make/][GNU Make]] (unless you want to
 run the commands manually).

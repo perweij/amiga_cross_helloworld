@@ -4,7 +4,7 @@ PROJDIR   = $(PWD)
 PROJMOUNT = /tmp/proj
 
 RUNCMD = docker run -v $(PROJDIR)\:$(PROJMOUNT) --rm \
-         -v /tmp/.X11-unix\:/tmp/.X11-unix -e DISPLAY -e XAUTHORITY -e XDG_RUNTIME_DIR \
+         -v /tmp/.X11-unix\:/tmp/.X11-unix -e DISPLAY \
          --net=host -v /dev/snd\:/dev/snd --device=/dev/video0  --ipc=host \
          --privileged -i -t $(DOCKERIMG)
 
