@@ -52,12 +52,16 @@ The emulator is run with the configuration file ~a1200.fs-uae~. By default
 it uses the free [[http://aros.sourceforge.net/][AROS rom]] instead of an original rom dump.
 
 Please note that the emulator is called with Docker flags ~--device=/dev/video0~
-and ~--privileged~ - which could probably be used to compromise your machine from withing the
-Docker image, so use with care, I can not be held responsible for any damage.
+and ~--device=/dev/snd~ which could probably be used to compromise your machine from withing the
+Docker image somehow, so use with care, I can not be held responsible for any damage. You can build the Docker image from scratch yourself, using [[https://github.com/perweij/amigaos-cross-toolchain/blob/master/Dockerfile][the Dockerfile]]. If you add ~--privileged~ to ~RUNCMD~, you make the harmless libGL-warnings disappear.
 
 * Prereqs
 [[https://docs.docker.com/][Docker CE]] must be installed on the host, and [[https://www.gnu.org/software/make/][GNU Make]] (unless you want to
-run the commands manually).
+run the commands manually). You also need ~xhost~. The two latter can be installed with
+
+: apt-get install make x11-xserver-utils
+
+
 
 * Install
 Clone https://github.com/perweij/amiga_cross_helloworld.git .

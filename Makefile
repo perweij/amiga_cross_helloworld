@@ -6,7 +6,7 @@ PROJMOUNT = /tmp/proj
 RUNCMD = docker run -v $(PROJDIR)\:$(PROJMOUNT) --rm \
          -v /tmp/.X11-unix\:/tmp/.X11-unix -e DISPLAY \
          --net=host --device=/dev/snd --device=/dev/video0  --ipc=host \
-         --privileged -i -t $(DOCKERIMG)
+         -i -t $(DOCKERIMG)
 
 ### Executed on host
 .PHONY: all
