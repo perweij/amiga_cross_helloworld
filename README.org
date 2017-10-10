@@ -27,10 +27,11 @@ This is a working Docker setup for compiling and running Amiga
 programs from GNU/Linux (possibly from other environments too). The
 cross compilation environment is a [[https://github.com/perweij/amigaos-cross-toolchain][minor fork]] of
 [[https://github.com/cahirwpz/amigaos-cross-toolchain][https://github.com/cahirwpz/amigaos-cross-toolchain]], and the emulation
-is done in [[https://fs-uae.net/][fs-uae]]. Using Docker's mapped folders, the source files can
-be conveniently edited in the host environment. Compilation and
-execution is also fully controlled from the host environment. The
-emulator works with both graphics and sound.
+is done in [[https://fs-uae.net/][fs-uae]]. It is implementing the ideas presented [[https://amiga.sebastian-bergmann.de/2017/02/18/dockerized-cross-compiler/][here.]] Using
+Docker's mapped folders, the source files can be conveniently edited
+in the host environment. Compilation and execution is also fully
+controlled from the host environment. The emulator works with both
+graphics and sound.
 
 The project pulls the image [[https://hub.docker.com/r/perweij/amigaos-cross-toolchain][perweij/amigaos-cross-toolchain]] from
 Docker. That image is automatically built when [[https://github.com/perweij/amigaos-cross-toolchain/blob/master/Dockerfile][this Dockerfile]] is
