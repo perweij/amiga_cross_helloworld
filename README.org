@@ -32,7 +32,7 @@ be conveniently edited in the host environment. Compilation and
 execution is also fully controlled from the host environment. The
 emulator works with both graphics and sound.
 
-The project pulls the image ~perweij/amigaos-cross-toolchain~ from
+The project pulls the image [[https://hub.docker.com/r/perweij/amigaos-cross-toolchain][perweij/amigaos-cross-toolchain]] from
 Docker. That image is automatically built when [[https://github.com/perweij/amigaos-cross-toolchain/blob/master/Dockerfile][this Dockerfile]] is
 updated.
 
@@ -60,7 +60,6 @@ Docker image somehow, so use with care, I can not be held responsible for any da
 run the commands manually). You also need ~xhost~. The two latter can be installed with
 
 : apt-get install make x11-xserver-utils
-
 
 
 * Install
